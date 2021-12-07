@@ -61,7 +61,7 @@ exports.updateBook = async (booksId, data) => {
 }
 
 exports.rentBook = async (booksId, data) => {
-  const books = await Books.findByIdAndRent(
+  const books = await Books.findOne(
     { _id: booksId },
     { $set: data }
   );
